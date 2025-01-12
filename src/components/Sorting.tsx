@@ -4,7 +4,11 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { IoIosAddCircleOutline } from "react-icons/io";
 import { FaCalendarAlt } from "react-icons/fa";
+import { useNavigate } from "react-router";
+import { USER_ADD } from "../utils/routeConstants.ts";
+
 export const Sorting = () => {
+  const navigate = useNavigate();
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
   return (
     <div className="h-[20%] flex items-end">
@@ -41,7 +45,7 @@ export const Sorting = () => {
             <span className="text-white">
               <IoIosAddCircleOutline className="scale-125 text-white" />
             </span>{" "}
-            <span>Add User</span>
+            <span onClick={() => navigate(USER_ADD)}>Add User</span>
           </button>
         </div>
       </div>
